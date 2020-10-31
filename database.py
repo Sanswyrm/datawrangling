@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Oct  7 19:56:37 2020
-
-@author: thema
-"""
-
 import csv
 import codecs
 import pprint
