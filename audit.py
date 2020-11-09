@@ -15,10 +15,10 @@ street_type_re = re.compile(r'\b\S+\.?$', re.IGNORECASE)
 
 
 expected = ["Street", "Avenue", "Boulevard", "Drive", "Court", "Place", "Square", "Lane", "Road", 
-            "Trail", "Parkway", "Commons"]
+            "Trail", "Parkway", "Commons", "Cove", "Way", "Pike", "Highway"]
 
 # UPDATE THIS VARIABLE
-mapping = { "St": "Street",
+mapping = {"St": "Street",
             "St.": "Street",
             "Ave": "Avenue",
             "Rd": "Road",
@@ -27,8 +27,11 @@ mapping = { "St": "Street",
             "Cv.": "Cove",
             "Hwy": "Highway",
             "Pk": "Pike",
+            "Dr": "Drive",
             "Avenus": "Avenue",
             "Rd": "Road",
+            "Pl N": "Place North",
+            "Deermont": "Deermont Drive"
            }
 
 
@@ -74,7 +77,6 @@ def update_name(name, mapping):
     elif m:
         return name
 
-
 def test():
     st_types = audit(OSMFILE)
     
@@ -83,3 +85,5 @@ def test():
 
 test()
 update_name('Billy Maher Rd', mapping)
+update_name('Ridgemont Avenus', mapping)
+update_name('Davies Plantation Rd', mapping)
